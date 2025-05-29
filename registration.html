@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
-  <link href="index.css" rel="stylesheet" type="text/css" />
+  <link href="registration.css" rel="stylesheet" type="text/css" />
 
   <!-- firebase start ****************************************-->
   <!-- Firebase App (core Firebase SDK) is always required & must be listed 1st -->
@@ -17,35 +17,36 @@
   <!-- firebase end ******************************************-->
   <script src="fb_setup.js"></script> 
   <script src="fb_io.js"></script> 
- 
-  
-
+  <script src="script.js"></script> 
 
 </head>
 
 <body>
 
 
-<!--- navbar --->
-<ul>
-            <li><a onclick="fb_login()">Login</a></li>
-</ul>
-<!--- navbar --->
+
+<form id="registrationForm" onsubmit="return validateForm();">
+  <!-- Username -->
+  <label for="HTML_name" class="questions">Please put your user name</label><br>
+  <input type="text" id="HTML_name" name="name" required><br><br>
+</form>
+
+<script>
 
 
-
-<h1 id="header">Gaming Website</h1>
-
-<!--- main text --->
-<div class="flex-container">
-            <div>Please login to continue to the webgames! 
- </div>
- </div>
-
-<!--- main text --->
+function validateForm() {
+  const name = document.getElementById('HTML_name').value.trim();
 
 
-
+  if (name === "") {
+    alert("Please enter your user name.");
+    return false;
+  }
+ 
+  fb_register();
+  return false; // Prevent default form submission
+}
+</script>
 
 </body>
 

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 5px;
+    padding: 0;
+    overflow: hidden;
+    background-color: grey;
+    color: black;
+}
+
+li {
+    float: left;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    background-color: grey;
+    border-style: solid;
+    border-color: black;
+    font-family: 'poppins', serif;
+
+}
+
+html body {
+    background-color: lightgray;
+}
+
+.flex-container div {
+    background-color: grey;
+
+    padding: 20px;
+    font-size: 40px;
+    height: 250px;
+    width: 400px;
+    border-style: solid;
+    font-family: 'Merriweather', serif;
+    margin-right: 200px;
+}
+
+div.gallery:hover {
+    border: 1px solid:grey;
+}
+
+
