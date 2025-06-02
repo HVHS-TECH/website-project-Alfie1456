@@ -29,6 +29,21 @@
   <!-- Username -->
   <label for="HTML_name" class="questions">Please put your user name</label><br>
   <input type="text" id="HTML_name" name="name" required><br><br>
+
+  <!-- Gender -->
+  <label for="HTML_gender" class="questions">Please put your gender (male, female, or other)</label><br>
+  <input type="text" id="HTML_gender" name="gender"
+         pattern="male|female|other"
+         title="Please enter male, female, or other"
+         required><br><br>
+
+  <!-- Age -->
+  <label for="HTML_age" class="questions">Please put your age</label><br>
+  <input type="number" id="HTML_age" name="age" min="1" max="120" required><br><br>
+
+  
+
+  <input type="submit" value="submit"><br><br>
 </form>
 
 <script>
@@ -36,13 +51,24 @@
 
 function validateForm() {
   const name = document.getElementById('HTML_name').value.trim();
-
+  const gender = document.getElementById('HTML_gender').value.trim().toLowerCase();
+  const age = parseInt(document.getElementById('HTML_age').value, 10);
 
   if (name === "") {
     alert("Please enter your user name.");
     return false;
   }
  
+  if (!["male", "female", "other"].includes(gender)) {
+    alert("Gender must be 'male', 'female', or 'other'.");
+    return false;
+  }
+  if (isNaN(age) || age < 13 || age > 120) {
+    alert("Please enter a valid age between 13 and 120.");
+    return false;
+  }
+
+
   fb_register();
   return false; // Prevent default form submission
 }

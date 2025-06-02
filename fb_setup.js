@@ -5,15 +5,16 @@ var database;
 // Initialize firebase, connect to the Firebase project.
 /**************************************************************/
 function fb_initialise() {  
-const firebaseConfig = {
-  apiKey: "AIzaSyDXULAjPvR9-JKWP1LRaIbXHuTGRg1VkMk",
-  authDomain: "dtech-2025-alfiecross-4841d.firebaseapp.com",
-  projectId: "dtech-2025-alfiecross-4841d",
-  storageBucket: "dtech-2025-alfiecross-4841d.firebasestorage.app",
-  messagingSenderId: "1018157546719",
-  appId: "1:1018157546719:web:281861487fcd836bcc3d6a",
-  measurementId: "G-445TDE8T2P"
-};
+  const firebaseConfig = {
+    apiKey: "AIzaSyAGCaJ9PL8M7Nsw7rl3A5IHODdyF-h71e8",
+    authDomain: "dtech-alfiecross-2025.firebaseapp.com",
+    databaseURL: "https://dtech-alfiecross-2025-default-rtdb.firebaseio.com",
+    projectId: "dtech-alfiecross-2025",
+    storageBucket: "dtech-alfiecross-2025.firebasestorage.app",
+    messagingSenderId: "930002586227",
+    appId: "1:930002586227:web:9c2aad4ce8135bb4533806",
+    measurementId: "G-78KTTPYYSV"
+  };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
