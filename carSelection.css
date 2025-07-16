@@ -1,104 +1,14 @@
-/*search bar*/
 
-
-/* CSS Reset & Font */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+html {
+    height: 100%;
+    width: 100%;
 }
 
-/* Basic Styling */
 
 
-
-.title {
-  font-size: 2rem;
-  color: black;
-  margin-bottom: 2rem;
-}
-
-.search-form {
-  position: relative;
-  width: 3.75rem;
-  height: 3.75rem;
-  border-radius: 999px;
-  background-color: white;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-  padding: 0.75rem;
-  margin: 0 0.5rem;
-  transition: width 0.5s;
-}
-
-.search-input {
-  background-color: white;
-  border: none;
-  outline: none;
-  width: 100%;
-  height: 100%;
-  border-radius: 999px;
-  padding-left: 1rem;
-  font-size: small;
-  pointer-events: none;
-}
-
-.search-button {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 999px;
-  background-color: #005e09;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  transition: all 0.5s;
-
-}
-
-.search-icon,
-.search-close {
-  position: absolute;
-  font-size: 1.25rem;
-  color: white;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.search-close {
-  opacity: 0;
-}
-
-/* Active Search */
-
-.active-search {
-  max-width: 100%;
-  width: 20rem;
-}
-
-.active-search .search-button {
-  left: calc(100% - 2rem);
-}
-
-.active-search .search-input {
-  pointer-events: initial;
-}
-
-.active-search .search-close {
-  opacity: 1;
-}
-
-.active-search .search-icon {
-  opacity: 0;
-}
-
-/*search bar*/
 /* search filters*/
 .filterDiv:hover {
-    background-color: lightblue;
+    background-color: grey;
 }
 
 /* search filters*/
@@ -110,15 +20,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
 
-html {
-    height: 100%;
-    width: 100%;
-}
 
 
 ul {
     list-style-type: none;
-    margin: 5px;
+    margin: .3rem;
     padding: 0;
     overflow: hidden;
     background-color: grey;
@@ -135,7 +41,7 @@ li a {
     display: block;
     color: black;
     text-align: center;
-    padding: 14px 16px;
+    padding: .9rem 1rem;
     text-decoration: none;
 }
 
@@ -160,57 +66,55 @@ html body {
 .flex-container div {
     background-color: grey;
 
-    padding: 20px;
-    font-size: 20px;
-    height: 250px;
-    width: 400px;
+    padding: 0.08rem;
+    font-size: 0.78rem;
+    height: 15rem;
+    width: 31rem;
     border-style: solid;
     font-family: 'Merriweather', serif;
-    margin-right: 200px;
+    margin-right: 12.5rem;
 }
 
-div.gallery:hover {
-    border: 1px solid:grey;
-}
 
 div.desc {
-    padding: 15px;
+    padding: 15rem;
     text-align: center;
     background-color: darkolivegreen;
 }
 
 .images2 {
-    margin-left: 550px;
-    margin-top: -300px;
+    margin-left: 34rem;
+    margin-top: -19rem;
 }
 /*Main Menu*/
 
-
+/* Filterable Gallery */
 .container {
-  overflow: hidden;
+  overflow: auto;
+  padding: 0.625rem;
 }
 
 .filterDiv {
   float: left;
-  background-color: #2196F3;
+  background-color: slategray;
   color: #ffffff;
-  width: 100px;
-  line-height: 100px;
+  width: 6.25rem;
+  line-height: 6.25rem;
   text-align: center;
-  margin: 2px;
+  margin: 0.125rem;
   display: none; /* Hidden by default */
 }
 
 /* The "show" class is added to the filtered elements */
 .show {
-  display: block;
+  display: inline-grid;
 }
 
 /* Style the buttons */
 .btn {
   border: none;
   outline: none;
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   background-color: #f1f1f1;
   cursor: pointer;
 }
