@@ -53,7 +53,7 @@ function fb_checkRegistration(snapshot) {
 		//redirecting users to the game menu page 
 		console.log("the user is registered in the database. Please contintue to game page!")
 		console.log("being redirected to game menu page.")
-		window.location = "mainMenu.html"
+		window.location = "index.html"
 		console.log("You have been redirected to the game page.")
 	}
 }
@@ -114,7 +114,22 @@ function fb_goToMainMenu() {
 
 
 
-
+function fb_checkRegistrationForPageChange(snapshot) {
+	console.log(snapshot.val())
+	if (snapshot.val() == null) {
+		//redirecting users to the registration page 
+		console.log("the user is not registered in the data base. Please go to the register page.")
+		console.log("being redirected to registration page.")
+		window.location = "registration.html"
+		console.log("You have been redirected to the registration page.")
+	} else {
+		//redirecting users to the game menu page 
+		console.log("the user is registered in the database. Please contintue to game page!")
+		console.log("being redirected to menu page.")
+		window.location = "carSelection.html"
+		console.log("You have been redirected to main page.")
+	}
+}
 
 
 

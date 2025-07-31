@@ -20,7 +20,6 @@ ul {
     margin: 5px;
     padding: 0;
     overflow: hidden;
-    background-color: grey;
     color: black;
 }
 
@@ -45,7 +44,6 @@ li a:hover {
 h1 {
     text-align: center;
     color: black;
-    background-color: grey;
     border-style: solid;
     border-color: black;
     font-family: 'poppins', serif;
@@ -53,11 +51,11 @@ h1 {
 }
 
 html body {
-    background-color: lightgray;
+    background-image: url("/45337653_9129518.jpg");
 }
 
 .flex-container div {
-    background-color: grey;
+    
 
     padding: 20px;
     font-size: 40px;
