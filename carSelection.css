@@ -1,131 +1,252 @@
-
-html {
-    height: 100%;
-    width: 100%;
-}
-
-
-
-/* search filters*/
-.filterDiv:hover {
-    background-color: grey;
-}
-
-/* search filters*/
-
-
-/*Main Menu*/
+/* import google fonts for headings and body text */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+/* set up base styles for the whole page */
+html, body {
+  background: #16425b; /* main dark background */
+  color: #f7f7f7;     /* light text for contrast */
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  min-height: 100vh;
+}
 
-
-
-
+/* navigation bar styles */
 ul {
-    list-style-type: none;
-    margin: .3rem;
-    padding: 0;
-    overflow: hidden;
-    background-color: grey;
-    color: black;
+  background: rgba(255,255,255,0.92); /* slightly opaque white */
+  border-bottom: 0.1875rem solid #e67e22;   /* orange accent border */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.10); /* subtle shadow */
 }
-
 li {
-    float: left;
-    font-family: 'Ubuntu', sans-serif;
-    color: black;
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0 1rem;
 }
-
 li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: .9rem 1rem;
-    text-decoration: none;
+  color: #14213d; /* dark navy text */
+  font-weight: 600;
+  letter-spacing: 0.03125rem;
+  display: block;
+  text-align: center;
+  padding: 0.875rem 1rem;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background 0.2s, color 0.2s;
+}
+li a:hover, li a:focus {
+  background-color: #e67e22; /* orange on hover */
+  color: #fff;
 }
 
-li a:hover {
-    background-color: white;
+/* page header styles */
+h1#header {
+  background: rgba(255,255,255,0.92); /* slightly opaque white */
+  color: #14213d; /* dark navy text */
+  border: 0.1875rem solid #e67e22; /* orange border */
+  font-family: 'Poppins', serif;
+  margin: 2rem auto 1rem auto;
+  max-width: 37.5rem;
+  padding: 1rem;
+  box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.22);
+  border-radius: 0.5rem;
+  text-align: center;
 }
 
-h1 {
-    text-align: center;
-    color: black;
-    background-color: grey;
-    border-style: solid;
-    border-color: black;
-    font-family: 'Merriweather', serif;
-
+/* main content flex container */
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
 }
-
-html body {
-    background-color: lightgray;
-}
-
 .flex-container div {
-    background-color: grey;
-
-    padding: 0.08rem;
-    font-size: 0.78rem;
-    height: 15rem;
-    width: 31rem;
-    border-style: solid;
-    font-family: 'Merriweather', serif;
-    margin-right: 12.5rem;
+  padding: 2rem 1.75rem;
+  font-size: 1.25rem;
+  max-width: 43.75rem;
+  min-width: 13.75rem;
+  border: 0.125rem solid #e67e22; /* orange border */
+  border-radius: 0.5rem;
+  font-family: 'Merriweather', serif;
+  background: rgba(255,255,255,0.92); /* slightly opaque white */
+  color: #14213d;
+  text-align: left;
+  line-height: 1.6;
+  box-shadow: 0 0.125rem 0.75rem rgba(0,0,0,0.12);
+  margin: 0 1rem;
 }
 
-
-div.desc {
-    padding: 15rem;
-    text-align: center;
-    background-color: darkolivegreen;
-}
-
-.images2 {
-    margin-left: 34rem;
-    margin-top: -19rem;
-}
-/*Main Menu*/
-
-/* Filterable Gallery */
+/* filtered car boxes */
 .container {
-  overflow: auto;
-  padding: 0.625rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .filterDiv {
-  float: left;
-  background-color: slategray;
-  color: #ffffff;
-  width: 6.25rem;
-  line-height: 6.25rem;
+  background-color: rgba(255,255,255,0.92); /* slightly opaque white */
+  color: #14213d;
+  border: 0.125rem solid #e67e22; /* orange border */
+  box-shadow: 0 0.125rem 0.75rem rgba(0,0,0,0.22);
+  width: 7.5rem;
+  min-height: 7.5rem;
+  display: none; /* hidden by default, shown with .show */
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin: 0.125rem;
-  display: none; /* Hidden by default */
-}
-
-/* The "show" class is added to the filtered elements */
-.show {
-  display: inline-grid;
-}
-
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 0.75rem 1rem;
-  background-color: #f1f1f1;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
   cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  margin: 0.25rem;
+  padding: 1rem;
+}
+.filterDiv.show {
+  display: flex; /* show filtered car boxes */
+}
+.filterDiv:hover {
+  background-color: #e67e22; /* orange on hover */
+  color: #fff;
+  border-color: #fff;
+  transform: scale(1.04);
 }
 
-/* Add a light grey background on mouse-over */
-.btn:hover {
-  background-color: #ddd;
+/* filter buttons */
+#myBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 1rem 0;
+  width: 100%;
 }
-
-/* Add a dark background to the active button */
+.btn {
+  background-color: rgba(255,255,255,0.92); /* slightly opaque white */
+  color: #14213d;
+  font-weight: 600;
+  border: 0.125rem solid #e67e22; /* orange border */
+  box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.18);
+  outline: none;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  margin: 0 0.25rem 0.5rem 0.25rem;
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover, .btn:focus {
+  background-color: #e67e22; /* orange on hover */
+  color: #fff;
+  border-color: #fff;
+}
 .btn.active {
-  background-color: #666;
-  color: white;
+  background-color: #14213d; /* dark navy for active */
+  color: #fff;
+  border-color: #e67e22;
+}
+
+/* responsive breakpoints for mobile, tablet, desktop */
+@media (max-width: 37.5rem) {
+  ul {
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: none;
+  }
+  li {
+    margin: 0;
+  }
+  li a {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 0;
+    border-bottom: 0.0625rem solid #eee;
+  }
+  h1#header {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    max-width: 95vw;
+  }
+  .flex-container {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+  .flex-container div {
+    font-size: 1rem;
+    min-width: 0;
+    max-width: 95vw;
+    padding: 0.875rem 0.5rem;
+    text-align: left;
+  }
+  .container {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  .filterDiv {
+    width: 95vw;
+    min-height: 3rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 37.5625rem) and (max-width: 56.25rem) {
+  ul {
+    flex-direction: row;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+  h1#header {
+    font-size: 1.5rem;
+    max-width: 80vw;
+  }
+  .flex-container div {
+    font-size: 1.1rem;
+    min-width: 6.25rem;
+    max-width: 56.25vw;
+    padding: 1.25rem 0.75rem;
+    text-align: left;
+  }
+  .container {
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+  .filterDiv {
+    width: 40vw;
+    min-height: 4rem;
+    font-size: 1.05rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 56.3125rem) {
+  ul {
+    flex-direction: row;
+    gap: 2rem;
+    font-size: 1.1rem;
+  }
+  h1#header {
+    font-size: 2rem;
+    max-width: 37.5rem;
+  }
+  .flex-container div {
+    font-size: 1.25rem;
+    min-width: 13.75rem;
+    max-width: 43.75rem;
+    padding: 2rem 1.75rem;
+    text-align: left;
+  }
+  .container {
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .filterDiv {
+    width: 7.5rem;
+    min-height: 7.5rem;
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
 }

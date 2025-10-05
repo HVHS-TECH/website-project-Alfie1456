@@ -107,7 +107,7 @@ function fb_userInfo(user) {
 }
 //redirecting to gamepage (gp) after registration
 function fb_goToMainMenu() {
-	window.location = "mainMenu.html"
+	window.location = "index.html"
 }
 
 

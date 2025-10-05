@@ -1,68 +1,147 @@
+/* base input styles for registration form */
 input {
   width: 50%;
-  padding: 12px;
-  margin: 10px;
+  padding: 0.75rem;
+  margin: 0.625rem;
   box-sizing: border-box;
   margin-left: 30%;
   margin-top: 1%;
 }
 
+/* button styles for submit, reset, etc. */
 input[type=button], input[type=submit], input[type=reset] {
-  background-color:lightblue;
+  background-color: lightblue;
   border: none;
   color: green;
-  padding: 16px 32px;
+  padding: 1rem 2rem;
   text-decoration: none;
-  margin: 4px 2px;
+  margin: 0.25rem 0.125rem;
   cursor: pointer;
-  margin-left: 30%;}
+  margin-left: 30%;
+}
 
+/* question label styles */
 .questions {
   margin-left: 30%;
-  font-size: 25px;
+  font-size: 1.5625rem;
 }
 
+/* page background color */
 html body {
-    background-color: lightgray;
+  background-color: lightgray;
 }
-/* Dropdown Button */
+
+/* dropdown button styles */
 .dropbtn {
   background-color: #04AA6D;
   color: white;
-  padding: 16px;
-  font-size: 16px;
+  padding: 1rem;
+  font-size: 1rem;
   border: none;
 }
 
-/* The container <div> - needed to position the dropdown content */
+/* dropdown container for positioning */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
+/* dropdown content hidden by default */
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 10rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
   z-index: 1;
 }
 
-/* Links inside the dropdown */
+/* dropdown links */
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   text-decoration: none;
   display: block;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+/* dropdown link hover color */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+/* show dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+/* change dropdown button color when menu is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+/* responsive breakpoints for mobile, tablet, desktop */
+@media (max-width: 37.5rem) {
+  input {
+    width: 95vw;
+    margin-left: 0;
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  .questions {
+    margin-left: 0;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+  }
+  .dropbtn {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  .dropdown-content {
+    min-width: 90vw;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 37.5625rem) and (max-width: 56.25rem) {
+  input {
+    width: 70vw;
+    margin-left: 10vw;
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+  .questions {
+    margin-left: 10vw;
+    font-size: 1.25rem;
+    padding: 0.75rem;
+  }
+  .dropbtn {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+  .dropdown-content {
+    min-width: 60vw;
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 56.3125rem) {
+  input {
+    width: 50vw;
+    margin-left: 30vw;
+    font-size: 1.25rem;
+    padding: 1.2rem;
+  }
+  .questions {
+    margin-left: 30vw;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  .dropbtn {
+    padding: 1.2rem;
+    font-size: 1.25rem;
+  }
+  .dropdown-content {
+    min-width: 20vw;
+    font-size: 1.25rem;
+  }
+}

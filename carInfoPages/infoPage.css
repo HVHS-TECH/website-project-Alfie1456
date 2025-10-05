@@ -1,196 +1,168 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
-   html {
-    height: 100%;
-    width: 100%;
+html, body {
+  background: #16425b;
+  color: #f7f7f7;
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  min-height: 100vh;
 }
-
-/* breakpoint one  */
-@media screen and (max-width:1500px) {
- 
 
 ul {
-    list-style-type: none;
-    margin: 0.3125rem;
-    padding: 0;
-    overflow: hidden;
-    background-color: grey;
-    color: black;
+  background: rgba(255,255,255,0.92);
+  border-bottom: 0.1875rem solid #e67e22;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.10);
 }
-
 li {
-    float: left;
-    font-family: 'Ubuntu', sans-serif;
-    color: black;
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0 1rem;
 }
-
 li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 0.875rem 1rem;
-    text-decoration: none;
+  color: #14213d;
+  font-weight: 600;
+  letter-spacing: 0.03125rem;
+  display: block;
+  text-align: center;
+  padding: 0.875rem 1rem;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background 0.2s, color 0.2s;
+}
+li a:hover, li a:focus {
+  background-color: #e67e22;
+  color: #fff;
 }
 
-li a:hover {
-    background-color: white;
+h1, h1#header {
+  background: rgba(255,255,255,0.92);
+  color: #14213d;
+  border: 0.1875rem solid #e67e22;
+  font-family: 'Poppins', serif;
+  margin: 2rem auto 1rem auto;
+  max-width: 37.5rem;
+  padding: 1rem;
+  box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.22);
+  border-radius: 0.5rem;
+  text-align: center;
 }
 
-h1 {
-    text-align: center;
-    color: black;
-    background-color: grey;
-    border-style: solid;
-    border-color: black;
-    font-family: 'Merriweather', serif;
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
 }
-
-html body {
-    background-color: lightgray;
-}
-
 .flex-container div {
-    background-color: grey;
-    padding: 1.25rem;
-    font-size: 1.25rem;
-    height: 15.625rem;
-    width: 25rem;
-    border-style: solid;
-    font-family: 'Merriweather', serif;
-    margin-right: 12.5rem;
+  padding: 2rem 1.75rem;
+  font-size: 1.25rem;
+  max-width: 43.75rem;
+  min-width: 13.75rem;
+  border: 0.125rem solid #e67e22;
+  border-radius: 0.5rem;
+  font-family: 'Merriweather', serif;
+  background: rgba(255,255,255,0.92);
+  color: #14213d;
+  text-align: left;
+  line-height: 1.6;
+  box-shadow: 0 0.125rem 0.75rem rgba(0,0,0,0.12);
+  margin: 0 1rem;
 }
 
-div.desc {
-    padding: 0.9375rem;
-    text-align: center;
-    background-color: darkolivegreen;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
 }
 
-.images2 {
-    margin-left: 34.375rem;
-    margin-top: -18.75rem;
-}
-}
-/* breakpoint one  */
-
-/* breakpoint two  */
-@media screen and (min-width:600px) {
+/* Responsive breakpoints */
+@media (max-width: 37.5rem) {
   ul {
-    list-style-type: none;
-    margin: 0.3125rem;
-    padding: 0;
-    overflow: hidden;
-    background-color: grey;
-    color: black;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: none;
+  }
+  li {
+    margin: 0;
+  }
+  li a {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 0;
+    border-bottom: 0.0625rem solid #eee;
+  }
+  h1, h1#header {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    max-width: 95vw;
+  }
+  .flex-container {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+  .flex-container div {
+    font-size: 1rem;
+    min-width: 0;
+    max-width: 95vw;
+    padding: 0.875rem 0.5rem;
+    text-align: left;
+  }
+  .container {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
 }
 
-li {
-    float: left;
-    font-family: 'Ubuntu', sans-serif;
-    color: black;
+@media (min-width: 37.5625rem) and (max-width: 56.25rem) {
+  ul {
+    flex-direction: row;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+  h1, h1#header {
+    font-size: 1.5rem;
+    max-width: 80vw;
+  }
+  .flex-container div {
+    font-size: 1.1rem;
+    min-width: 6.25rem;
+    max-width: 56.25vw;
+    padding: 1.25rem 0.75rem;
+    text-align: left;
+  }
+  .container {
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
 }
 
-li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 0.875rem 1rem;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: white;
-}
-
-h1 {
-    text-align: center;
-    color: black;
-    background-color: grey;
-    border-style: solid;
-    border-color: black;
-    font-family: 'Merriweather', serif;
-}
-
-html body {
-    background-color: lightgray;
-}
-
-.flex-container div {
-    background-color: grey;
-    padding: 1.25rem;
+@media (min-width: 56.3125rem) {
+  ul {
+    flex-direction: row;
+    gap: 2rem;
+    font-size: 1.1rem;
+  }
+  h1, h1#header {
+    font-size: 2rem;
+    max-width: 37.5rem;
+  }
+  .flex-container div {
     font-size: 1.25rem;
-    height: 15.625rem;
-    width: 25rem;
-    border-style: solid;
-    font-family: 'Merriweather', serif;
-    margin-right: 12.5rem;
-}
-
-
-.images2 {
-    margin-left: 20rem;
-    margin-top: -18.75rem;
-}
-}
-/* breakpoint two  */
-
-/* breakpoint three  */
-@media only screen and (max-width: 600px) {
-    ul {
-    list-style-type: none;
-    margin: 0.3125rem;
-    padding: 0;
-    overflow: hidden;
-    background-color: grey;
-    color: black;
-}
-
-li {
-    float: left;
-    font-family: 'Ubuntu', sans-serif;
-    color: black;
-}
-
-li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 0.875rem 1rem;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: white;
-}
-
-h1 {
-    text-align: center;
-    color: black;
-    background-color: grey;
-    border-style: solid;
-    border-color: black;
-    font-family: 'Merriweather', serif;
-}
-
-html body {
-    background-color: lightgray;
-}
-
-.flex-container div {
-    background-color: grey;
-    padding: 1.25rem;
-    font-size: 1.25rem;
-    height: 15.625rem;
-    width: 25rem;
-    border-style: solid;
-    font-family: 'Merriweather', serif;
-    margin-right: 12.5rem;
-}
-
-
-.images2 {
-    margin-left: 20rem;
-    margin-top: -18.75rem;
-}
+    min-width: 13.75rem;
+    max-width: 43.75rem;
+    padding: 2rem 1.75rem;
+    text-align: left;
+  }
+  .container {
+    gap: 1rem;
+    padding: 1rem;
+  }
 }

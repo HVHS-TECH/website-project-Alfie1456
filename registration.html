@@ -4,76 +4,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>registration</title>
   <link href="registration.css" rel="stylesheet" type="text/css" />
 
-  <!-- firebase start ****************************************-->
-  <!-- Firebase App (core Firebase SDK) is always required & must be listed 1st -->
+  <!-- firebase setup: include core sdk and required products -->
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>  
-  <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>  
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script> 
-  <!-- firebase end ******************************************-->
+  <!-- custom firebase and app scripts -->
   <script src="fb_setup.js"></script> 
   <script src="fb_io.js"></script> 
   <script src="script.js"></script> 
-
 </head>
 
 <body>
 
-
-
+<!-- registration form for user details -->
 <form id="registrationForm" onsubmit="return validateForm();">
-  <!-- Username -->
-  <label for="HTML_name" class="questions">Please put your user name</label><br>
+  <!-- username input -->
+  <label for="HTML_name" class="questions">please put your user name</label><br>
   <input type="text" id="HTML_name" name="name" required><br><br>
 
-  <!-- Gender -->
-  <label for="HTML_gender" class="questions">Please put your gender (male, female, or other)</label><br>
+  <!-- gender input (male, female, or other) -->
+  <label for="HTML_gender" class="questions">please put your gender (male, female, or other)</label><br>
   <input type="text" id="HTML_gender" name="gender"
          pattern="male|female|other"
-         title="Please enter male, female, or other"
+         title="please enter male, female, or other"
          required><br><br>
 
-  <!-- Age -->
-  <label for="HTML_age" class="questions">Please put your age</label><br>
+  <!-- age input  -->
+  <label for="HTML_age" class="questions">please put your age</label><br>
   <input type="number" id="HTML_age" name="age" min="1" max="120" required><br><br>
 
-  
-
+  <!-- submit button -->
   <input type="submit" value="submit"><br><br>
 </form>
 
 <script>
-
-
+// validate form fields before submitting
 function validateForm() {
   const name = document.getElementById('HTML_name').value.trim();
   const gender = document.getElementById('HTML_gender').value.trim().toLowerCase();
   const age = parseInt(document.getElementById('HTML_age').value, 10);
 
+  // check username is not empty
   if (name === "") {
-    alert("Please enter your user name.");
+    alert("please enter your user name.");
     return false;
   }
- 
+  // check gender is valid
   if (!["male", "female", "other"].includes(gender)) {
-    alert("Gender must be 'male', 'female', or 'other'.");
+    alert("gender must be 'male', 'female', or 'other'.");
     return false;
   }
+  // check age is within range
   if (isNaN(age) || age < 16 || age > 120) {
-    alert("Please enter a valid age between 16 and 120.");
+    alert("please enter a valid age between 16 and 120.");
     return false;
   }
-
-
+  // call firebase registration function
   fb_register();
-  return false; // Prevent default form submission
+  return false; // prevent default form submission
 }
 </script>
 
 </body>
-
 </html>
